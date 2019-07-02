@@ -37,6 +37,11 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'apps.usuario',
+    'apps.asignatura',
+    'apps.publicacion',
+    'apps.seccion',
+    'apps.programa_estudio',
 ]
 
 MIDDLEWARE = [
@@ -76,6 +81,9 @@ WSGI_APPLICATION = 'lccweb.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
+	'OPTIONS': {
+        'init_command': "SET sql_mode='STRICT_TRANS_TABLES'",
+          },
         'NAME': 'lccdb',
 	'USER': 'lccweb',
 	'PASSWORD': 'lccweb123',
