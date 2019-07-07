@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 
@@ -11,10 +12,10 @@
   <title>Licenciatura en Ciencia de la Computación</title>
 
   <!-- Bootstrap core CSS -->
-  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}">
 
   <!-- Custom styles for this template -->
-  <link href="css/heroic-features.css" rel="stylesheet">
+  <link rel="stylesheet" href="{% static 'css/heroic-features.css' %}">
 
 </head>    
 <body>
@@ -25,16 +26,16 @@
         <div class="row">
           <!-- social icon-->
           <div class="col-sm-12">
-            <a class="navbar-brand text-light" href="https://www.usach.cl/" style="text-transform: uppercase;">Universidad De Santiago de Chile</a>
-            <a class="navbar-brand text-light" href="http://fciencia.usach.cl/" style="text-transform: uppercase;">Facultad de Ciencia</a>
+            <a class="navbar-brand text-light" href="https://www.usach.cl/ " style="text-transform: uppercase;">Universidad De Santiago de Chile</a>
+            <a class="navbar-brand text-light" href="http://fciencia.usach.cl/ " style="text-transform: uppercase;">Facultad de Ciencia</a>
           </div>
         </div>
       </div>
   </header>
   <nav class="navbar navbar-expand-lg navbar-dark mx-background-top-linear">
     <div class="container">
-      <a  href="https://www.usach.cl/"><img src="img/escudo.png" class="img-fluid" alt="Responsive image"></a>
-      <a  href="index.html"><img src="img/logoweb.png" class="img-fluid" alt="Responsive image"></a>
+      <a  href="https://www.usach.cl/"><img src="{% static 'img/escudo.png' %}" class="img-fluid" alt="Responsive image"></a>
+      <a  href="index.html"><img src="{% static 'img/logoweb.png' %}" class="img-fluid" alt="Responsive image"></a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
       </button>
@@ -73,7 +74,7 @@
   <div class="container">
     <div class="container">
         <center>
-            <img src="img/portada_dmcc.jpg" class="img-fluid" alt="Responsive image">
+            <img src="{% static 'img/portada_dmcc.jpg' %}" class="img-fluid" alt="Responsive image">
         </center>
     </div>
       
@@ -152,8 +153,8 @@
   </footer>
 
   <!-- Bootstrap core JavaScript -->
-  <script src="vendor/jquery/jquery.min.js"></script>
-  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="{% static 'vendor/jquery/jquery.min.js' %}"></script>
+  <script src="{% static 'vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
 
 </body>
 
