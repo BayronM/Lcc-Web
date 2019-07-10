@@ -1,0 +1,24 @@
+{% extends 'HTML/index.html' %}
+
+
+{% block content %}
+<div class="row text-center">
+
+  <div class="col-lg-3 col-md-6 mb-4">
+    {% for noticia in list_of_news %}
+    <div class="card h-100">
+      <img class="card-img-top" src="media/{{noticia.imagen}}" alt="">
+      <div class="card-body">
+        <h4 class="card-title">{{noticia.titulo}} </h4>
+        <p class="card-text">{{noticia.fecha}}</p>
+      </div>
+      <div class="card-footer">
+        <a href="noticias/{{publicacion.id}}" class="btn btn-primary">Ver mas</a>
+      </div>
+    </div>
+  </div>
+  {% endfor %}
+<!-- /.row -->
+
+</div>
+{% endblock %}
