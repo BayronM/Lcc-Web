@@ -8,4 +8,12 @@ class asignatura(models.Model):
 	horatel = models.CharField(max_length=15)
 	sct = models.IntegerField()
 	requisito = models.CharField(max_length=50)
+<<<<<<< HEAD
+
+	def __str__(self):
+		return(self.nombre)
+=======
 	admin =models.ForeignKey(administrador(usuario), on_delete=models.CASCADE)
+	def __str__(self):
+		return self.codasig
+>>>>>>> b640d2cd0630be293c4a2c9d8707f048058c8f89
