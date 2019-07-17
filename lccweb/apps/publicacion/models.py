@@ -11,11 +11,14 @@ class publicacion(models.Model):
 	fecha = models.DateField()
 	admin =models.ForeignKey(administrador(usuario), on_delete=models.CASCADE)
 	seccion = models.ForeignKey(seccion(id),on_delete=models.CASCADE)
-
+	def __str__(self):
+		return self.titulo
 
 class noticia(publicacion):
 	descripcion = models.TextField()
 	cuerpo = models.TextField()
+	def __str__(self):	
+		return self.titulo
 
 class calendario_prueba(publicacion):
 	fecha_prueba = models.DateField()
@@ -23,3 +26,5 @@ class calendario_prueba(publicacion):
 	tipocalendario = models.CharField(max_length=10)
 	sala = models.CharField(max_length=10)
 	asig = models.ForeignKey(programa_estudio, on_delete=models.CASCADE)
+	def __str__(self):
+		return self.titulo

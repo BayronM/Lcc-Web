@@ -9,3 +9,5 @@ class asignatura(models.Model):
 	sct = models.IntegerField()
 	requisito = models.CharField(max_length=50)
 	admin =models.ForeignKey(administrador(usuario), on_delete=models.CASCADE)
+	def __str__(self):
+		return self.codasig

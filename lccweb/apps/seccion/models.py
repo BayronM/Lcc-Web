@@ -7,3 +7,5 @@ class seccion(models.Model):
 	nombre = models.CharField(max_length=20)
 	descripcion = models.TextField()
 	admin =models.ForeignKey(administrador(usuario), on_delete=models.CASCADE)
+	def __str__(self):
+		return self.nombre
