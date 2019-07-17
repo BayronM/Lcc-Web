@@ -59,7 +59,6 @@ class publicacion(models.Model):
 	imagen = models.ImageField(null=True,upload_to='imagenes/')
 	fecha = models.DateField()
 	seccion = models.ForeignKey(seccion(id),on_delete=models.CASCADE)
-<<<<<<< HEAD
 	CALENDARIO_CHOICES = [
 		(1,'Si'),
 		(0,'No')
@@ -69,25 +68,7 @@ class publicacion(models.Model):
 	def __str__(self):
 		return(self.titulo);
 
-=======
-	def __str__(self):
-		return self.titulo
->>>>>>> b640d2cd0630be293c4a2c9d8707f048058c8f89
 
 class noticia(publicacion):
 	descripcion = models.TextField()
 	cuerpo = models.TextField()
-<<<<<<< HEAD
-=======
-	def __str__(self):	
-		return self.titulo
-
-class calendario_prueba(publicacion):
-	fecha_prueba = models.DateField()
-	horario = models.CharField(max_length=10)
-	tipocalendario = models.CharField(max_length=10)
-	sala = models.CharField(max_length=10)
-	asig = models.ForeignKey(programa_estudio, on_delete=models.CASCADE)
-	def __str__(self):
-		return self.titulo
->>>>>>> b640d2cd0630be293c4a2c9d8707f048058c8f89
