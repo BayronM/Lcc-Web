@@ -6,3 +6,6 @@ from apps.seccion.models import seccion
 class Adminseccion(admin.ModelAdmin):
     list_display = ('nombre','descripcion',)
     list_filter = ('nombre',)
+    search_fields = (
+        'nombre',
+    )

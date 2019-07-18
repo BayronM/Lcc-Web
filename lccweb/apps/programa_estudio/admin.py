@@ -6,3 +6,7 @@ from apps.programa_estudio.models import programa_estudio
 class Adminprograma_estudio(admin.ModelAdmin):
     list_display = ('codigo','año','semestre',)
     list_filter = ('codigo',)
+    search_fields = (
+        'codigo',
+        'año'
+    )

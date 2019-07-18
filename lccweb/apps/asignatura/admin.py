@@ -7,3 +7,7 @@ from apps.asignatura.models import asignatura
 class Adminasignatura(admin.ModelAdmin):
     list_display = ('codasig','nombre','requisito',)
     list_filter = ('codasig','nombre',)
+    search_fields = (
+        'codasig',
+        'nombre',
+    )
