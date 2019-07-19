@@ -16,6 +16,9 @@
 
   <!-- Custom styles for this template -->
   <link rel="stylesheet" href="{% static 'css/heroic-features.css' %}">
+    
+  <!-- Custom styles for this template -->
+  <link rel="stylesheet" href="{% static 'css/footer_lcc_web.css' %}">
 
 </head>
 <body>
@@ -26,8 +29,9 @@
         <div class="row">
           <!-- social icon-->
           <div class="col-sm-12">
-            <a class="navbar-brand text-light" href="https://www.usach.cl/ " style="text-transform: uppercase;">Universidad De Santiago de Chile</a>
-            <a class="navbar-brand text-light" href="http://fciencia.usach.cl/ " style="text-transform: uppercase;">Facultad de Ciencia</a>
+              <a class="navbar-brand text-light" href="https://www.usach.cl/ " style="text-transform: uppercase;"><small>Universidad De Santiago de Chile</small></a>
+              <a class="navbar-brand text-light" style="text-transform: uppercase;"><small>|</small></a>
+              <a class="navbar-brand text-light" href="http://fciencia.usach.cl/" style="text-transform: uppercase;"><small>Facultad de Ciencia</small></a>
           </div>
         </div>
       </div>
@@ -101,7 +105,44 @@
   <!-- /.container -->
 {% endblock %}
   <!-- Footer -->
-  <footer class="py-5 bg-dark">
+  <footer>
+ <div class="container">
+   <div class="row">
+            <div class="col-lg-5 col-md-5 col-sm-4 col-xs-12">
+                <ul class="adress">
+                     <span>Dirección</span>    
+                     <li>
+                        <p>Universidad de Santiago de Chile. Avenida Alameda Libertador Bernardo O`Higgins 3363. Estacion Central, Santiago, Chile.</p>
+                      </li>
+                           
+                      <li>
+                        <p>Mesa Central: +562 2718 20 01</p>
+                        <p>Telefono: +562 2718 20 78</p>   
+                      </li>
+                           
+                      <li>
+                        <p>Email: infolcc@usach.cl</p>
+                      </li>
+                 </ul>
+            </div>
+            
+            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                <a  href="index.html"><img src="{% static 'img/logoweb.png' %}" class="img-fluid" alt="Responsive image"></a>
+            </div>
+       
+            <div class="col-lg-3 col-md-3 col-sm-4 col-xs-12">
+               <a  href="index.html"><img src="{% static 'img/facultad.jpeg' %}" class="img-fluid" alt="Responsive image"></a>
+            </div>
+       </div> 
+    </div>
+</footer>
+      
+      
+      
+      
+      
+      
+    <!--<footer class="py-5 bg-dark">
     <div class="container">
       <h0 class="m-0 text-left text-white">Universidad de Santiago de Chile</h0>
       <h0 class="m-0 text-left text-white">Avenida Alameda Libertador Bernardo O`Higgins 3363. Estacion Central, Santiago, Chile</h0>
@@ -110,8 +151,8 @@
       <p class="m-0 text-left text-white">Email: infolcc@usach.cl</p>
 
     </div>
-    <!-- /.container -->
-  </footer>
+    <!-- /.container -->    
+  <!--</footer>-->
 
   <!-- Bootstrap core JavaScript -->
   <script src="{% static 'vendor/jquery/jquery.min.js' %}"></script>

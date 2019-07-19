@@ -41,7 +41,6 @@ INSTALLED_APPS = [
     'apps.asignatura',
     'apps.publicacion',
     'apps.seccion',
-    'apps.programa_estudio',
 ]
 
 MIDDLEWARE = [
