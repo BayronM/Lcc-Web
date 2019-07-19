@@ -2,6 +2,7 @@ from django.db import models
 from apps.usuario.models import usuario,administrador
 from apps.asignatura.models import asignatura
 from apps.seccion.models import seccion
+from tinymce import HTMLField
 # Create your models here.
 
 class prueba(models.Model):
@@ -71,4 +72,4 @@ class publicacion(models.Model):
 
 class noticia(publicacion):
 	descripcion = models.TextField()
-	cuerpo = models.TextField()
+	cuerpo = HTMLField('Content')

@@ -1,0 +1,12 @@
+{% extends 'html/index.html' %}
+
+{% block content %}
+<center>
+    <h1>{{object.titulo}}</h1>
+</center>
+<center>
+  <div >
+    {{object.cuerpo | safe}}
+  </div>
+<center/>
+{% endblock %}
