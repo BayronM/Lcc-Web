@@ -2,7 +2,7 @@ from django.db import models
 from apps.usuario.models import usuario,administrador
 from apps.asignatura.models import asignatura
 from apps.seccion.models import seccion
-from tinymce import HTMLField
+from tinymce.models import HTMLField
 # Create your models here.
 
 class prueba(models.Model):
