@@ -14,7 +14,7 @@ class asignatura(models.Model):
 
 
 class programa_estudio(models.Model):
-	codigo = models.CharField(max_length=5,primary_key=True,default='0')
+	codigo = models.CharField(max_length=5,default='0')
 	año = models.IntegerField()
 	semestre = models.IntegerField()
 	asig = models.OneToOneField(asignatura,on_delete=models.CASCADE)

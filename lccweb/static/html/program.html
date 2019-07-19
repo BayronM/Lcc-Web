@@ -1,0 +1,58 @@
+{% extends 'html/index.html' %}
+
+
+{% block content %}
+<style>
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+ }
+ 
+ td, th {
+     border: 1px solid #dddddd;
+     text-align: left;
+     padding: 8px;
+ }
+ 
+ tr:nth-child(even) {
+     background-color: #dddddd;
+ }
+</style>
+</head>
+<body>
+    {% for program1 in list_of_program.0 %}
+      {% ifchanged program1.codigo %}
+      <h2>Plan N°{{program1.codigo}}</h2>
+      <table>
+          <tr>
+              <th>Codigo</th>
+              <th>Nombre</th>
+              <th>Semestre</th>
+              <th>Area</th>
+              <th>Tel</th>
+              <th>SCT</th>
+              <th>Requisitos</th>
+              </tr>
+        {% for program2 in list_of_program.1 %}
+                {% if program1.codigo == program2.codigo %}
+                    {% for asignatura in list_of_program.2 %}
+                        {% if program2.asig.codasig == asignatura.codasig %}
+                            <tr>
+                                <td>{{asignatura.codasig}}</td>
+                                <td>{{asignatura.nombre}}</td>
+                                <td>{{program2.semestre}}</td>
+                                <td>{{asignatura.areacon}}</td>
+                                <td>{{asignatura.horatel}}</td>
+                                <td>{{asignatura.sct}}</td>
+                                <td>{{asignatura.requisito}}</td>
+                            </tr>
+                        {% endif %}
+                    {% endfor %}
+                {% endif %}
+        {% endfor %}
+        </table>
+        {% endifchanged %}
+    {% endfor %}
+{% endblock %}
+    

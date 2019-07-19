@@ -1,5 +1,5 @@
 from django.contrib import admin
-from apps.asignatura.models import asignatura
+from apps.asignatura.models import asignatura,programa_estudio
 # Register your models here.
 #admin.site.register(asignatura)
 
@@ -10,4 +10,12 @@ class Adminasignatura(admin.ModelAdmin):
     search_fields = (
         'codasig',
         'nombre',
+    )
+@admin.register(programa_estudio)
+class Adminprograma_estudio(admin.ModelAdmin):
+    list_display = ('codigo','año','semestre','asig_id')
+    list_filter = ('codigo',)
+    search_fields = (
+        'codigo',
+        'año'
     )
