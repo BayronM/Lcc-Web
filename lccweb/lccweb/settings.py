@@ -37,6 +37,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'tinymce',
+    'filebrowser',
     'apps.usuario',
     'apps.asignatura',
     'apps.publicacion',
@@ -58,7 +60,7 @@ ROOT_URLCONF = 'lccweb.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR,"Template")],
+        'DIRS': [os.path.join(BASE_DIR,"static")],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -90,7 +92,34 @@ DATABASES = {
 	'PORT': '3306',
     }
 }
-
+TINYMCE_DEFAULT_CONFIG = {
+    'height': 360,
+    'width': 1120,
+    'cleanup_on_startup': True,
+    'custom_undo_redo_levels': 20,
+    'selector': 'textarea',
+    'theme': 'modern',
+    'plugins': '''
+            textcolor save link image media preview codesample contextmenu
+            table code lists fullscreen  insertdatetime  nonbreaking
+            contextmenu directionality searchreplace wordcount visualblocks
+            visualchars code fullscreen autolink lists  charmap print  hr
+            anchor pagebreak
+            ''',
+    'toolbar1': '''
+            fullscreen preview bold italic underline | fontselect,
+            fontsizeselect  | forecolor backcolor | alignleft alignright |
+            aligncenter alignjustify | indent outdent | bullist numlist table |
+            | link image media | codesample |
+            ''',
+    'toolbar2': '''
+            visualblocks visualchars |
+            charmap hr pagebreak nonbreaking anchor |  code |
+            ''',
+    'contextmenu': 'formats | link image',
+    'menubar': True,
+    'statusbar': True,
+    }
 
 # Password validation
 # https://docs.djangoproject.com/en/2.2/ref/settings/#auth-password-validators
@@ -128,12 +157,13 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
-STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, "Template"),
+STATIC_URL = '/static/'
+MEDIA_URL = '/media/'
+
+STATICFILES_DIRS= [
+    os.path.join(BASE_DIR , "static")
 ]
-STATIC_URL = '/Template/'
-
-MEDIA_URL='/media/'
 
 
-MEDIA_ROOT = os.path.join(BASE_DIR,'media')
+STATIC_ROOT = os.path.join(os.path.dirname(BASE_DIR),"static_cdn")
+MEDIA_ROOT = os.path.join(os.path.dirname(BASE_DIR),"media_cdn")
