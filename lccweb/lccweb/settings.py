@@ -42,7 +42,6 @@ INSTALLED_APPS = [
     'apps.usuario',
     'apps.asignatura',
     'apps.publicacion',
-    'apps.seccion',
 ]
 
 MIDDLEWARE = [

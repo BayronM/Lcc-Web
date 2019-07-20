@@ -1,9 +1,16 @@
 from django.db import models
 from apps.usuario.models import usuario,administrador
 from apps.asignatura.models import asignatura
-from apps.seccion.models import seccion
 from tinymce.models import HTMLField
 # Create your models here.
+
+class seccion(models.Model):
+	id = models.AutoField(primary_key=True)
+	nombre = models.CharField(max_length=20)
+	descripcion = models.TextField()
+
+	def __str__(self):
+		return(self.nombre)
 
 class prueba(models.Model):
 	PEP_CHOICES = [

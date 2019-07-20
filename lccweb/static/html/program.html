@@ -21,38 +21,32 @@ table {
 </style>
 </head>
 <body>
-    {% for program1 in list_of_program.0 %}
-      {% ifchanged program1.codigo %}
-      <h2>Plan N°{{program1.codigo}}</h2>
+    {% for program in list_of_program.0 %}
+      <h2>Plan N°{{program.codigo}}</h2>
       <table>
           <tr>
-              <th>Codigo</th>
               <th>Nombre</th>
               <th>Semestre</th>
+              <th>Nivel</th>
               <th>Area</th>
               <th>Tel</th>
               <th>SCT</th>
               <th>Requisitos</th>
               </tr>
-        {% for program2 in list_of_program.1 %}
-                {% if program1.codigo == program2.codigo %}
-                    {% for asignatura in list_of_program.2 %}
-                        {% if program2.asig.codasig == asignatura.codasig %}
-                            <tr>
-                                <td>{{asignatura.codasig}}</td>
-                                <td>{{asignatura.nombre}}</td>
-                                <td>{{program2.semestre}}</td>
-                                <td>{{asignatura.areacon}}</td>
-                                <td>{{asignatura.horatel}}</td>
-                                <td>{{asignatura.sct}}</td>
-                                <td>{{asignatura.requisito}}</td>
-                            </tr>
-                        {% endif %}
-                    {% endfor %}
+              {% for asignatura in list_of_program.1 %}
+                {% if program.codigo == asignatura.plan.codigo %}
+                  <tr>
+                    <td>{{asignatura.nombre}}</td>
+                    <td>{{asignatura.semestre}}</td>
+                    <td>{{asignatura.nivel}}</td>
+                    <td>{{asignatura.areacon}}</td>
+                    <td>{{asignatura.horatel}}</td>
+                    <td>{{asignatura.sct}}</td>
+                    <td>{{asignatura.requisito}}</td>
+                   </tr>
                 {% endif %}
-        {% endfor %}
-        </table>
-        {% endifchanged %}
+              {% endfor %}
+      </table>
     {% endfor %}
 {% endblock %}
     
