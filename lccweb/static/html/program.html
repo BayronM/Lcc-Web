@@ -42,7 +42,11 @@ table {
                     <td>{{asignatura.areacon}}</td>
                     <td>{{asignatura.horatel}}</td>
                     <td>{{asignatura.sct}}</td>
-                    <td>{{asignatura.requisito}}</td>
+                    <td>
+                        {% for requisito in asignatura.req.all %}
+                        <br> {{requisito.nombre}} </br>
+                        {% endfor %}
+                    </td>
                    </tr>
                 {% endif %}
               {% endfor %}

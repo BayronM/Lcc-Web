@@ -1,6 +1,13 @@
 from django.db import models
 # Create your models here.
 
+class requisito(models.Model):
+        id = models.AutoField(primary_key=True)
+        codasig = models.CharField(max_length=10)
+        nombre = models.CharField(max_length=30)
+        def __str__(self):
+                return self.nombre
+
 class programa_estudio(models.Model):
 	codigo = models.CharField(max_length=5,primary_key=True,default='0')
 	año = models.IntegerField()
@@ -9,11 +16,11 @@ class programa_estudio(models.Model):
 
 class asignatura(models.Model):
 	codasig = models.CharField(primary_key=True,max_length=10)
-	nombre = models.CharField(max_length=20)
+	nombre = models.CharField(max_length=30)
 	areacon = models.CharField(max_length=30)
 	horatel = models.CharField(max_length=15)
 	sct = models.IntegerField()
-	requisito = models.CharField(max_length=50)
+	req = models.ManyToManyField(requisito)
 	NIVEL_OPC = [
 			(1,'01'),
 			(2,'02'),
