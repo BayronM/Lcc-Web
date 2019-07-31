@@ -5,7 +5,7 @@ from apps.asignatura.models import asignatura,programa_estudio
 
 @admin.register(asignatura)
 class Adminasignatura(admin.ModelAdmin):
-    list_display = ('codasig','nombre','nivel','semestre','requisito','plan_id')
+    list_display = ('codasig','nombre','nivel','plan_id')
     list_filter = ('codasig','nombre',)
     search_fields = (
         'codasig',

@@ -26,6 +26,7 @@ urlpatterns = [
     path('tinymce/', include('tinymce.urls')),
     path('', include('apps.publicacion.urls')),
     path('',include('apps.asignatura.urls')),
+    path('',include('apps.estatico.urls'))
 ]
 
 if settings.DEBUG:

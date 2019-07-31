@@ -4,16 +4,16 @@
 {% block content %}
 <div class="row text-center">
 
-  <div class="col-lg-3 col-md-6 mb-4">
     {% for noticia in list_of_news %}
+    <div class="col-lg-3 col-md-6 mb-4">
     <div class="card h-100">
-      <img class="card-img-top" src="media/{{noticia.imagen}}" alt="">
+      <img class="card-img-top" height="250" width="400" src="media/{{noticia.imagen}}" alt="">
       <div class="card-body">
         <h4 class="card-title">{{noticia.titulo}} </h4>
         <p class="card-text">{{noticia.fecha}}</p>
       </div>
       <div class="card-footer">
-        <a href="noticias/{{publicacion.id}}" class="btn btn-primary">Ver mas</a>
+        <a href="noticias/{{noticia.id}}" class="btn btn-primary">Ver mas</a>
       </div>
     </div>
   </div>

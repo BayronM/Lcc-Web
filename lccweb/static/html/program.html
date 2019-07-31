@@ -8,13 +8,13 @@ table {
     border-collapse: collapse;
     width: 100%;
  }
- 
+
  td, th {
      border: 1px solid #dddddd;
      text-align: left;
      padding: 8px;
  }
- 
+
  tr:nth-child(even) {
      background-color: #dddddd;
  }
@@ -42,11 +42,10 @@ table {
                     <td>{{asignatura.areacon}}</td>
                     <td>{{asignatura.horatel}}</td>
                     <td>{{asignatura.sct}}</td>
-                    <td>{{asignatura.requisito}}</td>
+                    <td>{{asignatura.requisito.nombre}}</td>
                    </tr>
                 {% endif %}
               {% endfor %}
       </table>
     {% endfor %}
 {% endblock %}
-    

@@ -4,9 +4,57 @@
 <center>
     <h1>{{object.titulo}}</h1>
 </center>
+
+
+
 <center>
+  {% if object.calendarioprueba == 1 %}
+  <table>
+    <tr>
+      <th>Nivel</th>
+      <th>Asignatura</th>
+      <th>Prueba</th>
+      <th>Horario</th>
+      <th>Sala</th>
+    </tr>
+    {% for prueba in Pruebas %}
+    <tr>
+      <td>{{prueba.asig.nivel}}</td>
+      <td>{{prueba.asig.nombre}}</td>
+      <td>{{prueba.nombre}}</td>
+      {% if prueba.horario == 1 %}
+      <td>Modulo 1-2 (8:00-9:30)</td>
+      {% elif prueba.horario == 2 %}
+      <td>Modulo 3-4 (9:40-11:10)</td>
+      {% elif prueba.horario == 3 %}
+      <td>Modulo 5-6 (11:20-12:50)</td>
+      {% elif prueba.horario == 4 %}
+      <td>Modulo 7-8 (13:50-15:20)</td>
+      {% elif prueba.horario == 5 %}
+      <td>Modulo 9-10 (15:30-17:00)</td>
+      {% elif prueba.horario == 6 %}
+      <td>Modulo 11-12 (17:10-18:40)</td>
+      {% elif prueba.horario == 7 %}
+      <td>Modulo 13-14 (18:45-20:10)</td>
+      {% elif prueba.horario == 8 %}
+      <td>Modulo 15-16 (20:10-21:35)</td>
+      {% elif prueba.horario == 9 %}
+      <td>Modulo 17-18 (21:35-23:00)</td>
+      {% elif prueba.horario == 0 %}
+      <td>Horario sin asignar</td>
+      {% endif %}
+      <td>{{prueba.sala}}</td>
+    </tr>
+    {% endfor %}
+  </table>
+
+  {% endif %}
   <div >
     {{object.cuerpo | safe}}
   </div>
 <center/>
+
+
+
+
 {% endblock %}
