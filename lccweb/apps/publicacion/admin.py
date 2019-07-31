@@ -1,9 +1,16 @@
 from django.contrib import admin
-from apps.publicacion.models import prueba,publicacion,noticia
+from apps.publicacion.models import seccion,prueba,publicacion,noticia
 # Register your models here.
 #admin.site.register(publicacion)
 #admin.site.register(calendario_prueba)
 #admin.site.register(noticia)
+@admin.register(seccion)
+class Adminseccion(admin.ModelAdmin):
+    list_display = ('nombre','descripcion',)
+    list_filter = ('nombre',)
+    search_fields = (
+        'nombre',
+    )
 @admin.register(prueba)
 class pruebaAdmin(admin.ModelAdmin):
     list_display = ('nombre','fecha','horario','semestre','sala','asig_id')
