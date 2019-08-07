@@ -21,7 +21,7 @@ table {
 </style>
 </head>
 <body>
-    {% for program in list_of_program.0 %}
+    {% for program in list_of_program %}
       <h2>Plan N°{{program.codigo}}</h2>
       <table>
           <tr>
@@ -33,8 +33,7 @@ table {
               <th>SCT</th>
               <th>Requisitos</th>
               </tr>
-              {% for asignatura in list_of_program.1 %}
-                {% if program.codigo == asignatura.plan.codigo %}
+              {% for asignatura in asignaturas %}
                   <tr>
                     <td>{{asignatura.nombre}}</td>
                     <td>{{asignatura.semestre}}</td>
@@ -42,9 +41,12 @@ table {
                     <td>{{asignatura.areacon}}</td>
                     <td>{{asignatura.horatel}}</td>
                     <td>{{asignatura.sct}}</td>
-                    <td>{{asignatura.requisito.nombre}}</td>
+                    <td>
+                    {%for  requisito in asignatura.requisito.all %}
+                    <br> {{requisito.nombre}} </br>
+                    {% endfor %}
+                    </td>
                    </tr>
-                {% endif %}
               {% endfor %}
       </table>
     {% endfor %}

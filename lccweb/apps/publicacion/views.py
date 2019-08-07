@@ -17,7 +17,7 @@ def home_view(request, *args,**kwargs):
 
 def news_view(request):
     obj = publicacion.objects.order_by('-fecha').filter(estado=1)
-    paginator = Paginator(obj,9)
+    paginator = Paginator(obj,1)
     content = Contenido_Estatico.objects.all()
     page = request.GET.get('page')
     news = paginator.get_page(page)
@@ -44,7 +44,7 @@ def news_view_detail(request , pub_id):
     return render(request,template_name,context)
 
 def calendar_view(request):
-    obj = prueba.objects.all()
+    obj = prueba.objects.order_by('codigo')
     template_name= "html/calendar.html"
-    context = { 'list_of_pruebas' : obj }
+    context = { 'list_of_pruebas' : obj}
     return render(request,template_name,context)

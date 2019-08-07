@@ -18,13 +18,15 @@ from django.urls import path,re_path, include
 from django.conf import settings # new
 from django.conf.urls.static import static # new
 from filebrowser.sites import site
+from django.contrib.auth import views as auth_views
 
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('admin/filebrowser/', site.urls ),
     path('tinymce/', include('tinymce.urls')),
-    path('', include('apps.publicacion.urls')),
+    path('accounts/login/', auth_views.LoginView.as_view()),
+    path('',include('apps.publicacion.urls')),
     path('',include('apps.asignatura.urls')),
     path('',include('apps.estatico.urls'))
 ]
@@ -32,3 +34,5 @@ urlpatterns = [
 if settings.DEBUG:
     urlpatterns += static(settings.STATIC_URL , document_root = settings.STATIC_ROOT )
     urlpatterns += static(settings.MEDIA_URL , document_root = settings.MEDIA_ROOT )
+
+admin.site.site_header = 'Administración Lcc'
